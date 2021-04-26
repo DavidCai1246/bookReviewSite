@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block body %}
+    <h1> Main Page </h1>
+
+    <form action = "{{ url_for('result')}}" method="post">
+        <div class="form-group">
+            <input type="text" name="book_name" list="books" placeholder="Enter a Book Title">
+            <datalist id="books">
+            	{% for book in books %}
+        			<option value="{{ book.title }}">{ book.title }</option>
+    			{% endfor %}
+            </datalist>
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+{% endblock %}

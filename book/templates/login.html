@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+    <h1> Log In! </h1>
+
+    <form action = "{{ url_for('mainpage')}}" method="post">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Enter Your Username">
+            <input type ="password" name="password">
+            <button class="btn btn-primary">Log In</button>
+        </div>
+    </form>
+{% endblock %}
